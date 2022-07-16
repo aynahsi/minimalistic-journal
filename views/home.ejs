@@ -1,0 +1,21 @@
+
+<%-include("partials/header");-%>
+
+<h1 style="padding: 10px;">Welcome to my website</h1>
+<p style="padding:10px"><%=content%></p>
+<!-- <% for(var i=0;i<postarray.length;i++){%>
+  <% let query=postarray[i]%>
+    <h1><%= query.title%></h1>
+     <p><%= query.para%></p>
+  <%}%> -->
+
+
+  <% postarray.forEach(function(query){%>
+   
+
+    <h1 style="padding-left:10px;"><%= query.title%></h1>
+  <p style="padding: 10px;" > <%= query.para.substring(1, 100) + "..."  %> 
+  <a href="./posts/<%= query.title%>">read more</a>
+  </p>
+  <%})%>
+   <%-include("partials/footer");-%>
